@@ -1,3 +1,5 @@
+// 1. let vs var start
+
 function discountPricesVar (applyDiscount) {
   var discounted = []
 
@@ -24,3 +26,4 @@ function discountPricesLet (applyDiscount) {
   
   let pricesLet = discountPricesLet(true);
   
+// let vs var finish..
