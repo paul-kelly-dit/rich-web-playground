@@ -61,4 +61,21 @@ for (var i = 0; i < numbers.length; i++) {
 
 // Functions as Function Arguments finish
   
+
+// Functions can return functions
+
+function createAdder() {
+    function addNumbers(a, b) {
+        let ret = a + b;
+        return ret;
+    }
+
+    return addNumbers;
+}
+
+let adder = createAdder();
+let sum = adder(val, 8);
+console.log('example of function returning a function: ', sum);
+
+// end function can return functions    
   
