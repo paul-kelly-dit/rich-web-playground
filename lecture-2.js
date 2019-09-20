@@ -63,7 +63,7 @@ for (var i = 0; i < numbers.length; i++) {
   
 
 // Functions can return functions
-
+let val = 8;
 function createAdder() {
     function addNumbers(a, b) {
         let ret = a + b;
