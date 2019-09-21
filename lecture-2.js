@@ -2,7 +2,7 @@
 
 function discountPricesVar (applyDiscount) {
     var discounted = []
-  
+
     if (applyDiscount) {
       var discountedPrice = 20;
       discounted.push(discountedPrice)
@@ -10,12 +10,12 @@ function discountPricesVar (applyDiscount) {
     console.log('Discounted Price: ' + discountedPrice);
     return discounted;
   };
-  
+
   var prices = discountPricesVar(true);
-  
+
   function discountPricesLet (applyDiscount) {
       let discounted = []
-    
+
       if (applyDiscount) {
         let discountedPrice = 20;
         discounted.push(discountedPrice)
@@ -23,19 +23,19 @@ function discountPricesVar (applyDiscount) {
       console.log('Discounted Price: ' + discountedPrice);
       return discounted;
     };
-    
+
     let pricesLet = discountPricesLet(true);
-    
+
   // let vs var finish..
-  
+
   // 2. Functions as Function Arguments
-  const squared = (n1) => { 
+  const squared = (n1) => {
       let result = n1 * n1;
       console.log("Result : " + result);
       return result;
   }
 
-  const adder = (n1) => { 
+  const adder = (n1) => {
     let result = n1 + 1;
     console.log("Result : " + result);
     return result;
@@ -51,16 +51,16 @@ let numbers = [1, 2, 3, 4, 5];
 for (var i = 0; i < numbers.length; i++) {
     let result = numbers[i] * numbers[i];
     console.log(result);
-}  
+}
 
 
 for (var i = 0; i < numbers.length; i++) {
     let result = numbers[i] + 1;
     console.log(result);
-}  
+}
 
 // Functions as Function Arguments finish
-  
+
 
 // Functions can return functions
 let val = 8;
@@ -77,19 +77,32 @@ let adder = createAdder();
 let sum = adder(val, 8);
 console.log('example of function returning a function: ', sum);
 
-// end function can return functions    
-  
+// end function can return functions
+
 // Closure
 
 function createCounter() {
     let counter = 0;
+
+    // Whenever you declare a new function and assign
+    // it to a variable, you store the function definition, as well as a closure
+
+    // The variable myFunction is a function definition. Javascript also creates a closure when you store
+    // a function definition. In this case the closure contains the variables that are in scope, in this case
+    // the variable counter (with the value of 0).
     const myFunction = function () {
         counter = counter + 1;
         return counter;
     };
+
+    // This returns the contents of the function (not the invocation),
+    // after myFunction is removed from local execution context
     return myFunction;
 };
+// calling this createCounter returns a function definition (not an invocation)
 const increment = createCounter();
+
+// We now invocate the function(), initially counter above will be undefined, so treated as 0 kindof.
 const c1 = increment();
 const c2 = increment();
 const c3 = increment();
