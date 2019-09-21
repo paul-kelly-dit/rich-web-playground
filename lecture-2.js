@@ -109,3 +109,25 @@ const c3 = increment();
 console.log('example increment', c1, c2, c3);
 
 // End closure
+
+// DOM elements
+document.getElementsByTagName("section")[0];
+document.getElementsByClassName('email')[0].innerText;
+
+
+let el = document.getElementById('lecture-2'); // => HTMLParagraphElement
+console.log(el.innerHTML);                 // => read
+el.innerHTML = "<section>Another Sample Email</section>"
+el.innerHTML = “new content”;               // => update
+let el2 = document.getElementById('lecture-2');
+console.lgo(el2);
+
+
+let el = document.createElement("p"); 
+let text = document.createTextNode("Hello, world!"); 
+el.appendChild(text);
+let where = document.getElementsByTagName("section")
+document.body.insertBefore(el, where);
+
+
+// End DOM access elements
