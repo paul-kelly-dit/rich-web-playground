@@ -30,6 +30,8 @@ function discountPricesVar (applyDiscount) {
 
   // 2. Functions as Function Arguments
   const squared = (n1) => {
+      let result = n1 * n1;
+      console.log("Result : " + result);
       return result;
   }
 
