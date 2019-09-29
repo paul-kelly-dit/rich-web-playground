@@ -79,3 +79,16 @@ function factorial(x) {
 }
 
 factorial(3);
+
+// another recursion example
+
+function revStr(str){
+    if (str === '') return '';
+    return revStr(str.substr(1)) + str[0];
+}
+revStr('cat');
+
+revStr('cat') //returns revStr('at') + 'c'
+revStr('at') //returns revStr('t') + 'a'
+revStr('t')// returns revStr('') + 't'
+revStr('')// returns ''
