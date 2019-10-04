@@ -45,6 +45,39 @@ const addValuesFn = (accumulator, currentValue) => accumulator + currentValue;
 // 1 + 2 + 3 + 4
 console.log([1, 2, 3, 4].reduce(addValuesFn));
 
+// Filter example
+
+let books = [{
+    "id": 111,
+    "title": "C# 6.0",
+    "author": "ANDREW TROELSEN",
+    "rating": [4.7],
+    "reviews": [{good: 4, excellent: 12}]
+}, {
+    "id": 222,
+    "title": "Efficient Learning Machines",
+    "author": "Rahul Khanna",
+    "rating": [4.5],
+    "reviews": []
+}, {
+    "id": 333,
+    "title": "Pro AngularJS",
+    "author": "Adam Freeman",
+    "rating": [4.0],
+    "reviews": []
+}];
+
+// First lets doing a simple map first on a complex data structure
+books.map(book => {
+    var newObj = {title: book.title};
+    return newObj;
+});
+
+// What if want to return only books with a rating greater than 4.5
+books.filter(book => book.rating >= 4.5);
+
+// We can also chain these to get just the titles returned.
+books.filter(book => book.rating >= 4.5).map(b => b.title)
 
 
 // Currying example basic
