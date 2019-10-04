@@ -24,6 +24,29 @@ const divideByTen = (num) => {
 
 ['123', '456', '789'].map(toInt).map(divideByTen);
 
+// Flatmap example
+
+// type this in console
+Array.from({length:3}).fill(1)
+
+// ok now we automate
+const echo = n => x => Array.from({length:n}).fill(x);
+
+//[[1,1,1],[2,2,2],[3,3,3]]
+console.log([1, 2, 3].map( echo(3) ));
+
+// whats wrong with this?
+console.log([1, 2, 3].flatMap( echo(3) ));
+
+// Reduce example
+
+const addValuesFn = (accumulator, currentValue) => accumulator + currentValue;
+
+// 1 + 2 + 3 + 4
+console.log([1, 2, 3, 4].reduce(addValuesFn));
+
+
+
 // Currying example basic
 
 const sum = x => y => x + y;
