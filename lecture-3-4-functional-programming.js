@@ -148,3 +148,8 @@ revStr('cat') //returns revStr('at') + 'c'
 revStr('at') //returns revStr('t') + 'a'
 revStr('t')// returns revStr('') + 't'
 revStr('')// returns ''
+
+// Another recursion example to work through in the class
+function myLen(str) {
+// implement this in class
+}
