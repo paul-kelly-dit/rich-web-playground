@@ -79,6 +79,31 @@ books.filter(book => book.rating >= 4.5);
 // We can also chain these to get just the titles returned.
 books.filter(book => book.rating >= 4.5).map(b => b.title)
 
+//////////////////// Higher Order Functions examples
+
+//passing a function
+let tellType = (arg) => {
+    console.log(typeof arg);
+};
+
+let data = 1;
+tellType(data);
+
+// Lets look at a typical implementation of the Array.every
+
+// in jsbin
+const oddNumberFn = num => {
+    return num % 2;
+};
+
+const every = (arr,fn) => {
+    let result = true;
+    for(let i=0;i<arr.length;i++)
+        result = result && fn(arr[i])
+    return result
+}
+
+console.log(every([1,2,3], oddNumberFn));
 
 // Currying example basic
 
