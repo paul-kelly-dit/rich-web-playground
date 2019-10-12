@@ -22,18 +22,18 @@ $getReposBtn.onclick = function(){
     xhr.send();
 };
 
-let $getReposJQueryAjaxBtn = document.getElementById("get-repos-jquery-ajax");
-$getReposJQueryAjaxBtn.onclick = function(){
-    $.ajax("https://api.github.com/users/vintharas/repos")
-        .done(function(data){
-            $response.innerHTML = JSON.stringify(data,null,2);
-        });
+let $getReposFetch = document.getElementById("get-repos-fetch");
+$getReposFetch.onclick = function(){
+    let response = fetch("https://api.github.com/users/paul-kelly-dit/repos").then(function(res) {
+        if (res.ok) {
+            res.json().then(function(data) {
+                $response.innerHTML = JSON.stringify(data,null,2);
+            });
+        } else {
+            $response.innerHTML("Response : " + res.statusText);
+        }
+    }, function(e) {
+        $response.innerHTML("Error : " + e);
+    });
 };
 
-let $getReposJQueryGetBtn = document.getElementById("get-repos-jquery-get");
-$getReposJQueryGetBtn.onclick = function(){
-    $.get("https://api.github.com/users/paul-kelly-dit/repos")
-        .done(function(data){
-            $response.innerHTML = JSON.stringify(data,null,2);
-        });
-};
