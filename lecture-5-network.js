@@ -37,3 +37,19 @@ $getReposFetch.onclick = function(){
     });
 };
 
+let $getGitProfileInfo = document.getElementById("get-repos-fetch");
+$getGitProfileInfo.onclick = function(){
+    let response = fetch("https://api.github.com/users/paul-kelly-dit").then(function(res) {
+        if (res.ok) {
+            res.json().then(function(data) {
+                $response.innerHTML = JSON.stringify(data,null,2);
+            });
+        } else {
+            $response.innerHTML("Response : " + res.statusText);
+        }
+    }, function(e) {
+        $response.innerHTML("Error : " + e);
+    });
+};
+
+
