@@ -3,9 +3,6 @@ window.onload = function() {
     const button = document.getElementById('myButton');
     const myObservable = Rx.Observable.fromEvent(button, 'click');
     const subscription = myObservable.subscribe(event => console.log(event));
-
-
-
 };
 
 
